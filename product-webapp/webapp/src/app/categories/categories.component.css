@@ -1,0 +1,243 @@
+
+
+/*.card-container:hover {*/
+/*  !* Increase the size of the card on hover *!*/
+/*  transform: scale(1.05);*/
+/*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* Optional: Add a subtle box-shadow on hover *!*/
+/*}*/
+
+/*.product-card{*/
+/*  cursor: pointer;*/
+/*}*/
+/*.products {*/
+/*  display: flex;*/
+/*  margin: 2rem;*/
+/*}*/
+/*.products-item{*/
+/*  display: inline-flex;*/
+/*}*/
+
+/*.container-2{*/
+/*  flex : 2;*/
+/*  margin-top: 2rem;*/
+/*  margin-left: 2rem;*/
+/*}*/
+/*.container-1{*/
+/*  flex: 1;*/
+/*  margin: 1rem;*/
+/*  max-width: 20rem;*/
+/*}*/
+/*.card-container{*/
+/*  height: 25rem;*/
+/*  width:  23rem;*/
+/*  margin: 1rem;*/
+/*  border: 2px solid  lightgreen;*/
+/*  background-color: white;*/
+/*  border-radius: 20px;*/
+/*  transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*  cursor: pointer;*/
+
+/*}*/
+/*mat-card-header{*/
+
+/*  padding-left: 2rem;*/
+/*}*/
+/*mat-card-footer{*/
+/*  padding-top: 1rem;*/
+/*  padding-left: 2rem;*/
+/*}*/
+/*.product-info{*/
+/*  justify-content: center;*/
+/*  display: flex;*/
+/*  cursor: pointer; !* Show the pointer cursor on hover *!*/
+/*  overflow: hidden; !* Hide any ripple overflow *!*/
+/*  position: relative;*/
+
+/*}*/
+
+/*.product-info img{*/
+/*  width: 100%;*/
+/*  max-width: 15rem;*/
+/*  max-height: 20rem;*/
+
+/*}*/
+/*.expansion-container{*/
+/*  margin-left: 5rem;*/
+/*  margin-right: 10rem;*/
+/*  background-color: greenyellow;*/
+/*}*/
+/*.example-container{*/
+/*  margin-left: 2rem;*/
+/*}*/
+
+
+.card-container:hover {
+  /* Increase the size of the card on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box-shadow on hover */
+}
+
+/*.product-card{*/
+/*  cursor: pointer;*/
+/*}*/
+/*.products {*/
+/*  display: flex;*/
+/*  margin: 2rem;*/
+/*}*/
+/*.products-item{*/
+/*  display: inline-flex;*/
+/*}*/
+
+/*.container-2{*/
+/*  flex : 2;*/
+/*  margin-top: 2rem;*/
+/*  margin-left: 2rem;*/
+/*}*/
+/*.container-1{*/
+/*  flex: 1;*/
+/*  margin: 1rem;*/
+/*  max-width: 20rem;*/
+/*}*/
+/*.card-container{*/
+/*  height: 25rem;*/
+/*  width:  20rem;*/
+/*  margin: 1rem;*/
+/*  border: 2px solid  lightgreen;*/
+/*  background-color: white;*/
+/*  border-radius: 20px;*/
+/*  transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*  cursor: pointer;*/
+
+/*}*/
+mat-card-header{
+  justify-content: space-between;
+  padding-right: 0rem;
+
+}
+
+.products{
+  display: flex;
+  margin-left: 2rem;
+}
+mat-card-footer{
+  padding-top: 1rem;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+/*.product-info{*/
+/*  justify-content: center;*/
+/*  display: flex;*/
+/*  cursor: pointer; !* Show the pointer cursor on hover *!*/
+/*  overflow: hidden; !* Hide any ripple overflow *!*/
+/*  position: relative;*/
+
+/*}*/
+
+/*.product-info img{*/
+/*  width: 100%;*/
+/*  max-width: 15rem;*/
+/*  max-height: 20rem;*/
+
+/*}*/
+/*.expansion-container{*/
+/*  margin-left: 5rem;*/
+/*  margin-right: 10rem;*/
+/*  background-color: greenyellow;*/
+/*}*/
+/*.example-container{*/
+/*  margin-left: 2rem;*/
+/*}*/
+.product-card{
+  cursor: pointer;
+}
+
+.container-box{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.all-product {
+  display: flex;
+  flex-wrap: wrap;
+  /* Add negative margin to offset spacing between flex items */
+}
+
+.c {
+  flex-basis: calc(25%); /* 25% width with spacing */
+  background-color: #fff;
+  transition: transform 0.2s ease; /* Add a smooth hover effect */
+  border-radius: 20px;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #e5b2c4;
+}
+
+.card-container{
+  height: 27rem;
+  width: 20rem;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.card-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Maintain aspect ratio and fit the image within the container */
+  border-radius: 10px;
+}
+
+.recommendation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly */
+  margin-bottom: 4rem; /* Adjust as needed */
+}
+/* Carousel container */
+.carousel-section {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  max-height: 400px; /* Adjust the maximum height as needed */
+}
+
+/* Carousel image container */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Individual carousel images */
+.carousel img {
+  width: auto;
+  max-height: 100%;
+  object-fit: contain; /* Maintain aspect ratio and fit inside container */
+}
+
+/* Active image */
+.carousel img.active {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+}
+
+/* Inactive images */
+.carousel img:not(.active) {
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+

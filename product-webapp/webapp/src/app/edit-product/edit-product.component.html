@@ -1,0 +1,75 @@
+
+<div class="container">
+  <form [formGroup]="productForm" (ngSubmit)="editForm()" >
+    <div class="second-container">
+      <div class="product-details">
+        <div>
+          <label for="product-name">Product Name:</label>
+          <input type="text" id="product-name" formControlName="productName">
+        </div>
+        <div class="row mt-10 mb-10">
+          <div class="col">
+            <label for="price">Price (₹):</label>
+            <div class="price-input">
+              <span class="inr-symbol">₹</span>
+              <input type="number" id="price" formControlName="productPrice" required>
+            </div>
+          </div>
+          <div class=" col">
+            <label for="category">Category:</label>
+            <select id="category" name="category" formControlName="productCategory">
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+              <option value="home">Home</option>
+              <option value="books">Books</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="condition">Condition:</label>
+          <select id="condition" name="condition" formControlName="productCondition">
+            <option value="new">New</option>
+            <option value="excellent">Excellent</option>
+            <option value="very-good">Very Good</option>
+            <option value="good">Good</option>
+            <option value="broken">A bit broken/torn</option>
+          </select>
+        </div>
+        <div class="product-desc">
+          <label for="product-desc">Description</label>
+          <textarea name="product-desc" id="product-desc" rows="6" formControlName="productDesc"></textarea>
+        </div>
+
+      </div>
+      <div class="images-section">
+        <div class="image-box">
+          <input type="file"
+                 name="product-image"
+                 id="product-image"
+                 (change)="onImageSelected($event)" >
+        </div>
+        <!-- Display the selected image -->
+<!--        <div *ngIf="selectedImage" >-->
+<!--          <img [src]="selectedImage" alt="Selected Image" class="selected-image" />-->
+<!--        </div>-->
+<!--        <div class="upload-button">-->
+<!--          <button type="button" (click)="uploadImage()">-->
+<!--            <img src="assets\images\Products\{{productData.productImgUrl}}"-->
+<!--                 alt="Upload-Image"-->
+<!--                 accept="image/*"-->
+<!--                 required>-->
+<!--            Upload-->
+<!--          </button>-->
+<!--        </div>-->
+
+
+      </div>
+    </div>
+    <div class="add-product">
+      <button class="type-submit">
+        Edit Product
+      </button>
+    </div>
+     </form>
+
+</div>

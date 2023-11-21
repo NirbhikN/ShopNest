@@ -1,0 +1,65 @@
+<!--<section >-->
+<!--  <div class="products">-->
+<!--    <div class="all-product "  *ngFor="let product of getProductsOnCurrentPage()">-->
+<!--    <mat-card   *ngIf="searchProduct === '' || product.productName.toLowerCase().includes(searchProduct)">-->
+<!--      <mat-card-content class="product-info">-->
+<!--      <div class="product-info" matRipple >-->
+<!--        <img class="grow-on-hover" alt="productImage" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" [routerLink]="'/products/' + product.productId">-->
+<!--      </div>-->
+<!--      <mat-card-header>-->
+<!--         <mat-card-title>{{ product.productName | titlecase  }}</mat-card-title>-->
+<!--           <button mat-raised-button color="accent" [routerLink]="'products/' + product.productId"> Buy Now </button>-->
+<!--        <mat-card-subtitle>Rs.{{ product.productPrice }}</mat-card-subtitle>-->
+<!--      </mat-card-header>-->
+<!--        <mat-card-footer>-->
+
+<!--                    <button mat-button [routerLink]="'products/:productId/slot'">-->
+<!--                      <mat-icon> access_time </mat-icon>-->
+<!--                    </button>-->
+<!--                    <button mat-raised-button (click)="addToCart(product)" style="margin-left: 3rem"><mat-icon> shopping_cart </mat-icon> Add to Cart</button>-->
+<!--        </mat-card-footer>-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+<!--    </div>-->
+<!--    <mat-paginator style="margin-right: 2rem" [length]="myProducts.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)"></mat-paginator>-->
+<!--    </div>-->
+
+
+
+<!--</section>-->
+
+
+
+<section >
+  <div class="products">
+    <div class="all-product" >
+      <div class="products-item" *ngFor="let product of getProductsOnCurrentPage()">
+        <mat-card  class="card-container" *ngIf="searchProduct === '' || product.productName.toLowerCase().includes(searchProduct)">
+          <mat-card-content class="product-info">
+            <div class="product-info" matRipple >
+              <img class="grow-on-hover" alt="productImage" src="../../assets/images/Products/{{product.productImgUrl}}" [routerLink]="'/products/' + product.productId">
+            </div>
+            <mat-card-header>
+              <mat-card-title>{{ product.productName | titlecase  }}</mat-card-title>
+              <button mat-raised-button color="accent" [routerLink]="'products/' + product.productId"> Buy Now </button>
+              <mat-card-subtitle>Rs.{{ product.productPrice }}</mat-card-subtitle>
+
+            </mat-card-header>
+            <mat-card-footer>
+              <button mat-button [routerLink]="'products/:productId/slot'">
+                <mat-icon> access_time </mat-icon>
+              </button>
+              <button mat-raised-button (click)="addToCart(product)" class="mx-3"><mat-icon> shopping_cart </mat-icon> Add to Cart</button>
+            </mat-card-footer>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+
+  </div>
+  <mat-paginator style="margin-right: 3rem" [length]="products.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)"></mat-paginator>
+<div *ngIf="products.length == 0">
+  <p class="mx-5">No Products to Display</p>
+</div>
+</section>

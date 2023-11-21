@@ -1,0 +1,20 @@
+  .product-image {
+      max-width: 100%;
+      height: auto;
+  }
+
+  p{
+    padding: 4px;
+  }
+
+  .sold-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red; /* You can use any color you like */
+      color: white;
+      padding: 5px 10px;
+      font-weight: bold;
+  }
+
+

@@ -1,0 +1,226 @@
+/* Style for the header */
+.example-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #b2e5db;
+}
+.card-container {
+  margin: 5px 20px 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  align-items: center;
+  margin-left: 2rem;
+}
+.logo img {
+  width: 55px;
+  height: auto;
+  padding: 5px;
+}
+
+.search-bar {
+  display: flex;
+  flex: 6;
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin-left: 15rem;
+  padding: 5px 20px;
+  height: 45px;
+  background-color: #fff;
+}
+.search-input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  border-radius: 25px;
+}
+.search-input::placeholder {
+  padding-left: 10px;
+  font-size: 15px;
+}
+.search-button img {
+  width: 100%;
+}
+.search-button {
+  width: 50px;
+  border-radius: 20px;
+  background-color: #b2e5db;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-button img {
+  width: 35px;
+  height: auto;
+  /*margin-left: rem;*/
+}
+.user-button{
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background-color: lightcyan;
+
+}
+
+.user-button2 {
+  display: flex;
+  align-items: center;
+
+}
+
+.user-button2:hover {
+  background-color: #70c3ac;
+}
+
+.button-box {
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.button-box:hover {
+  background-color: #70c3ac;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dropdown-username{
+  background-color: #b2e5db;
+}
+.dropdown-username:hover{
+  background-color: #70c3ac;
+}
+
+.dropdown-menu{
+  background-color: #b2e5db;
+}
+
+/* Style for the navigation bar */
+.navbar {
+  display: flex;
+  align-items: stretch;
+  margin: 5px 20px;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.categories {
+  border-radius: 10px;
+  background-color: #b2e5db;
+  max-width: 230px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Adjust the z-index as needed to ensure it appears on top */
+}
+
+.categories mat-panel-title {
+  font-size: 16px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row when there's not enough space */
+  gap: 5px; /* Add some spacing between category items */
+}
+
+.expand-item {
+  display: block;
+  width: 100%;
+  background-color: #b2e5db; /* Background color for each category item */
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-align: left;
+  text-decoration: none; /* Remove underlines from links */
+  color: #000; /* Text color */
+  font-size: 15px;
+  transition: background-color 0.3s ease; /*Smooth background color transition */
+}
+.expand-item:hover {
+  background-color: #70c3ac; /* Change background color on hover */
+}
+
+/* Style for the navigation items */
+.nav-item {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav-item:hover {
+  background-color: #70c3ac;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  flex: 7;
+  background-color: #b2e5db;
+  padding: 0 5px;
+  text-align: center;
+  align-items: center; /* Center vertically within the container */
+  justify-content: space-between;
+  height: 48px;
+}
+
+.nav-item-container {
+  flex: auto;
+}
+
+.categories-container {
+  flex: auto;
+  margin-right: 50px;
+}
+
+/* Media query to stop .nav-item-container from shrinking below a certain screen width */
+@media (max-width: 1250px) {
+  .navbar {
+    min-width: max-content; /* Set a minimum width to prevent shrinking */
+    overflow-x: auto; /* Add horizontal scroll when needed */
+  }
+
+  .categories-container,
+  .nav-item-container {
+    min-width: 250px;
+    flex-grow: 1; /* Allow them to grow to fill the available space */
+  }
+
+  /* Add a margin between the elements */
+  .categories-container {
+    margin-right: 5px;
+  }
+
+  .whole-navbar-container {
+    min-width: max-content;
+    overflow-x: auto;
+  }
+}
+
+
+

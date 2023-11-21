@@ -1,0 +1,53 @@
+<mat-card class="m-4">
+  <div class="col-md-12 ">
+    <div class="box d-flex ">
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Image"
+        class="w-25 h-25 mr-3 " style="max-width: 150px;">
+      <div class="d-flex align-items-center ms-5 py-4 row ">
+        <h2 style="font-size: 30px;">{{userData.name}}</h2>
+        <p>{{userData.email}}</p>
+        <p>Member since Sep 2023</p>
+      </div>
+      <div class="d-flex justify-content-end align-items-end ms-auto ">
+        <button mat-button class="btn-bottom-order mb-0 " routerLink="/order">Your Orders</button>
+        <button mat-button class="btn-bottom-edit mb-0" routerLink="/edit">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<div class="border d-flex flex-column">
+  <mat-card class="mx-4 mb-5">
+    <div class="col-md-8">
+      <div class="card-body p-4" *ngIf="userData">
+        <h3>Name</h3>
+        <p class="text-muted">{{userData.name}}</p>
+        <hr class="mt-0 mb-4">
+        <h3>Gender</h3>
+        <p>{{userData.gender}}</p>
+        <hr class="mt-0 mb-4">
+        <div class="row pt-1">
+          <div class="col-6 mb-3">
+            <h3>Email</h3>
+            <p class="text-muted">{{userData.email}}</p>
+          </div>
+          <div class="col-6 mb-3">
+            <h3>Phone</h3>
+            <p class="text-muted">{{userData.contactNum}}</p>
+          </div>
+        </div>
+        <hr class="mt-0 mb-4">
+        <h3>Address</h3>
+
+        <p>State:- {{userData.address.state}}</p>
+        <p>City:-  {{userData.address.city}} </p>
+        <p>StreetName:- {{userData.address.streetName}}</p>
+        <p>Landmark:-  {{userData.address.landmark}}</p>
+        <p>Pincode:-  {{userData.address.pinCode}}</p>
+
+        <p>House Number:- {{userData.address.additionalField1}}</p>
+        <p>BuildingName:- {{userData.address.additionalField2}} </p>
+        <hr class="mt-0 mb-4">
+      </div>
+    </div>
+  </mat-card>
+</div>

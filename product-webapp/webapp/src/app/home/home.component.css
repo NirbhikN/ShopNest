@@ -1,0 +1,158 @@
+
+mat-card-header{
+  justify-content: space-between;
+  padding-right: 0rem;
+
+}
+.sold-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red; /* You can use any color you like */
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.products{
+  display: flex;
+  margin-left: 2rem;
+}
+mat-card-footer{
+  padding-top: 1rem;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+.product-card{
+  cursor: pointer;
+}
+
+.container-box{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.all-product {
+  display: flex;
+  flex-wrap: wrap;
+ /* Add negative margin to offset spacing between flex items */
+}
+
+.c {
+  flex-basis: calc(25%); /* 25% width with spacing */
+  background-color: #fff;
+  transition: transform 0.2s ease; /* Add a smooth hover effect */
+  border-radius: 20px;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #e5b2c4;
+}
+
+.card-container{
+  height: 27rem;
+  width: 20rem;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.latest, .recommendation{
+  height: auto;
+  width: 22rem;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.card-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.card-container:hover {
+  /* Increase the size of the card on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box-shadow on hover */
+}
+
+
+/* Adjust the size and positioning of the carousel container */
+ngb-carousel {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust the size of the carousel images */
+.carousel img {
+  max-width: fit-content;
+}
+
+/* Adjust the height of the carousel container based on the aspect ratio of your images */
+ngb-carousel .carousel-inner {
+  padding-top: 56.25%;
+  position: relative;
+}
+
+/* Center the carousel content vertically within the container */
+ngb-carousel .carousel-inner .carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ngb-carousel .carousel-control-prev-icon,
+ngb-carousel .carousel-control-next-icon {
+  font-size: 2rem;
+  color: #0c0c0c;
+}
+
+/* Optionally, add styles for the carousel indicators */
+ngb-carousel .carousel-indicators {
+  bottom: 10px;
+}
+
+/* Optionally, style the active indicator differently */
+ngb-carousel .carousel-indicators .active {
+  background-color: #333;
+}
+
+.productimage img{
+  width: 100%;
+}
+
+.heading{
+  font-weight: 500;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+hr{
+  color: #717171;
+}
+

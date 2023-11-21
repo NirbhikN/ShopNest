@@ -1,0 +1,126 @@
+/* payment section */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.end {
+  text-align: center;
+  background-color: #81c5b7;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.footer-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  display: flex;
+  color: black;
+  background-color: #e5e5e5;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  color: black;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  color: black;
+}
+
+a {
+  color: #8c8c8c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.li {
+  border-color: black;
+}
+
+/* last section */
+.footer {
+  background-color: #c4f1e9;
+  color: black;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-logo {
+  height: auto;
+  width: 150px;
+}
+
+.app-links {
+  display: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app-link img {
+  width: 150px;
+}
+
+.social-links {
+  display: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 100%; /* Position the popup below the app-link */
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .app-link:hover .popup {
+    display: block; /* Show the popup on hover */
+  }
+  

@@ -1,0 +1,123 @@
+
+<div class="container">
+  <form action="" method="post" enctype="multipart/form-data"
+        [formGroup] = "productForm" (ngSubmit) = "onSubmit()" >
+    <div class="second-container">
+      <div class="product-details">
+        <div>
+          <label for="product-name">Product Name:</label>
+          <input type="text" id="product-name" formControlName="productName" required>
+        </div>
+        <div class="row mt-10 mb-10">
+          <div class="col">
+            <label for="price">Price (₹):</label>
+            <div class="price-input">
+              <span class="inr-symbol">₹</span>
+              <input type="number" id="price" formControlName="productPrice" required>
+            </div>
+          </div>
+          <div class=" col">
+            <label for="category">Category:</label>
+            <select id="category" name="category" formControlName="productCategory">
+              <option value="electronics">Electronics</option>
+              <option value="cars">Cars</option>
+              <option value="motorcycles">Motorcycles</option>
+              <option value="personal loan">Personal Loan</option>
+              <option value="sports">Sports</option>
+              <option value="collectable & arts">Collectable & Arts</option>
+              <option value="home & garden">Home & Garden</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="condition">Condition:</label>
+          <select id="condition" name="condition" formControlName="productCondition">
+            <option value="new">New</option>
+            <option value="excellent">Excellent</option>
+            <option value="very-good">Very Good</option>
+            <option value="good">Good</option>
+            <option value="broken">A bit broken/torn</option>
+          </select>
+        </div>
+        <div class="product-desc">
+          <label for="description">Description</label>
+          <textarea id="description" name="product-desc" id="product-desc" rows="6" formControlName="productDesc"></textarea>
+        </div>
+
+<!--        <div>-->
+<!--          <form [formGroup]="slotForm" (ngSubmit)="bookSlot()">-->
+
+<!--            <div class="form-group">-->
+<!--              <h1 class="display-4 text-left">Available on</h1>-->
+<!--              <hr class="my-4">-->
+
+<!--              <label for="datepicker">Select a Date:</label>-->
+<!--              <input type="date" class="form-control mb-3" id="datepicker" formControlName="bookingDate">-->
+
+<!--              <label for="start-time">Select Starting Time</label>-->
+<!--              <input type="time" class="form-control mb-4" id="start-time" formControlName="startTime">-->
+
+<!--              <label for="end-time">Select Ending Time:</label>-->
+<!--              <input type="time" class="form-control mb-4" id="end-time" formControlName="endTime">-->
+
+<!--              <button type="submit" class="btn btn-success float-right">Book Slot</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+
+
+        <form [formGroup]="slotForm">
+          <div class="form-group">
+            <h1 class="display-4 text-left">Add Slots</h1>
+
+            <div *ngFor="let dateTime of selectedDateTimes; let i = index" class="mb-3">
+              <label for="date-time-{{ i }}">Select Date and Time:</label>
+              <div class="input-group">
+                <input type="date" class="form-control" [formControlName]="'bookingDate' + i">
+                <input type="time" class="form-control mt-2" [formControlName]="'startTime' + i">
+                <input type="time" class="form-control mt-2" [formControlName]="'endTime' + i">
+
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-danger" (click)="removeDateTime(i)">Remove</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" (click)="addDateTime()">Add Slot</button>
+
+          </div>
+        </form>
+
+      </div>
+      <div class="images-section">
+        <div class="image-box">
+          <input type="file"
+                 name="product-image"
+                 id="product-image"
+                 (change)="onSelected($event)" >
+        </div>
+        <!-- Display the selected image -->
+<!--        <div *ngIf="selectedImage" >-->
+<!--          <img [src]="selectedImage" alt="Selected Image" class="selected-image" />-->
+<!--        </div>-->
+<!--        <div class="upload-button">-->
+<!--&lt;!&ndash;          <button type="button" (click)="uploadImage()">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="assets\images\upload-file.png"&ndash;&gt;-->
+<!--&lt;!&ndash;                 alt="Upload-Image"&ndash;&gt;-->
+<!--&lt;!&ndash;                 accept="image/*"&ndash;&gt;-->
+<!--&lt;!&ndash;                 required>&ndash;&gt;-->
+<!--&lt;!&ndash;            Upload&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--        </div>-->
+
+
+      </div>
+    </div>
+    <div class="add-product">
+      <button type-submit>
+        Add Product
+      </button>
+    </div>
+     </form>
+
+</div>

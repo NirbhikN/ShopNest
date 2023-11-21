@@ -1,0 +1,99 @@
+
+<div class="main-container">
+  <mat-card class="card-1">
+
+    <mat-card-content>
+      <mat-list>
+        <div class="back-home">
+          <button mat-icon-button routerLink="/"><mat-icon>keyboard_backspace</mat-icon></button><b>Back to Home</b>
+        </div>
+        <div class="card-1-item">
+              <h1 mat-subheader class="heading">Shopping Cart</h1>
+              <h3 style="align-self: center" class="text-muted" >{{cartNum}} items</h3>
+        </div>
+        <div *ngIf="cartItems.length == 0">
+          <mat-divider></mat-divider>
+          <h2 class="text-muted" style="font-size:large; padding-left: 1rem; padding-top: 1rem">Cart is Empty</h2>
+          <h2 class="text-muted" *ngif ="auth" style="font-size:large; padding-left: 1rem; padding-top: 1rem">Cart is Empty</h2>
+          <mat-divider></mat-divider>
+        </div>
+        <div *ngFor="let items of cartItems" >
+      <mat-divider></mat-divider>
+        <div class="card-1-item-2" >
+          <div class="content">
+          <div class="card-1-item-2-sub-1">
+              <img src="../../assets/images/Products/{{items.product.productImgUrl}}" alt="img-logo">
+          </div>
+          <div class="card-1-item-2-sub-2">
+            <h4 class="text-muted" >{{items.product.productName | titlecase}}</h4>
+<!--            <h4 >-->
+<!--              {{items.product.productDesc}} </h4>-->
+            <h4 >
+              Category : {{items.product.productCategory | titlecase}}</h4>
+            <h4 >
+              Condition : {{items.product.productCondition | titlecase}}</h4>
+            <h4>
+              Sold By : {{items.product.sellerName| titlecase}}</h4>
+          </div>
+          </div>
+          <div class="card-1-item-2-sub-3">
+            <h4 class="text-muted" style="font-size:large; padding-top: 1rem">QTY</h4>
+            <p style="font-size:large; padding: 5px; text-align: center; border-radius: 10px; border: 1px solid #777777">1</p>
+          </div>
+          <div class="card-1-item-2-sub-4">
+            <h4 class="text-muted" style="font-size:large; padding-top: 1rem; text-align: left">Price</h4>
+            <p style="font-size:large; padding: 5px;border-radius: 10px; border: 1px solid #777777">Rs {{items.product.productPrice}}</p>
+          </div>
+          <div class="card-1-item-2-sub-5">
+            <button mat-icon-button (click)="cartService.removeFromCart(items.product)" style="border-radius: 20px;" ><mat-icon>remove_circle_outline</mat-icon></button>
+          </div>
+          </div>
+        <mat-divider></mat-divider>
+        </div>
+    </mat-list>
+      <button class="block-1-button" mat-raised-button  (click)="buyNow()">Buy Now</button>
+
+    </mat-card-content>
+  </mat-card>
+
+
+
+  <mat-card class="card-2">
+  <mat-card-content>
+    <mat-list>
+      <div class="card-2-item">
+        <h1 mat-subheader class="heading1">Summary</h1>
+      </div>
+      <mat-divider></mat-divider>
+      <div style="padding-top: 2rem">
+        <h2 class="heading-items">ITEMS : {{cartNum}}</h2>
+      </div>
+      <div class="shipping">
+        <h2>SHIPPING</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Delivery <mat-icon>airport_shuttle</mat-icon></mat-label>
+          <mat-select>
+            <mat-option value="option1">In-Person</mat-option>
+            <mat-option value="option2">Standard Delivery </mat-option>
+            <mat-option value="option3">Three Days  </mat-option>
+            <mat-option value="option3">Seven Days  </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div >
+      <div class="coupon">
+        <h2 >GIVE COUPON CODE</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your Code</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="price">
+        <h2>TOTAL PRICE :  Rs {{totalPrice}}</h2>
+        <button mat-raised-button (click)="buyNow()">Buy Now</button>
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+</div>

@@ -1,0 +1,57 @@
+<h1 class="heading">Your Orders</h1>
+<div class="containerBox">
+    <div class="bought-items">
+        <div class="headerBox row">
+            <h1 class="col">Items You Bought</h1>
+            <img src="../../assets/images/bought-icon.png" alt="bought-icon" class="col">
+
+            <table class="table table-hover" *ngIf="boughtProducts">
+                <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let product of boughtProducts;  let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td>{{product.productDesc | truncate: 1}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+    <div class="sold-items">
+        <div class="headerBox row">
+            <h1 class="col">Items You Sold</h1>
+            <img src="../../assets/images/sold-icon.png" alt="bought-icon" class="col headerImage">
+        </div>
+
+        <table class="table table-hover" *ngIf="soldProducts">
+            <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of soldProducts;  let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{product.productName}}</td>
+                <td>{{product.productPrice}}</td>
+                <td>{{product.productDesc}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

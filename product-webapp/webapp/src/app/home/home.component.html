@@ -1,0 +1,160 @@
+<!-- eslint-disable @angular-eslint/template/eqeqeq -->
+<section class="carousel-section mt-3 ms-auto" *ngIf="searchProduct === ''">
+  <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover">
+    <ng-template
+      ngbSlide
+      *ngFor="let img of images; index as i"
+      class="carousel"
+    >
+      <a target="_blank" rel="nofollow noopener noreferrer">
+        <div class="image-wrapper">
+          <img [src]="img" alt="My image {{ i + 1 }} description" />
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+</section>
+
+<section>
+  <h1 class="heading " *ngIf="searchProduct === ''">Latest Products</h1>
+  <div class="all-product " *ngIf="searchProduct === ''">
+    <div class="products-item " *ngFor="let product of latestProducts">
+      <mat-card class="latest" *ngIf="product.productStatus != 'Sold'">
+        <!-- Content for products that are not sold -->
+        <mat-card-content class="product-info">
+          <div class="productimage" matRipple>
+            <img
+              class="grow-on-hover"
+              alt="productImage"
+              src="../../assets/images/Products/{{ product.productImgUrl }}"
+              [routerLink]="'/products/' + product.productId"
+              style="height: 17rem; border-radius: 10px"
+            />
+            <div *ngIf="product.productStatus == 'Sold'" class="sold-banner">
+              Sold
+            </div>
+          </div>
+          <mat-card-header>
+            <mat-card-title [routerLink]="'/products/' + product.productId">
+              {{ product.productName | titlecase }}
+            </mat-card-title>
+            <mat-card-subtitle>Rs.{{ product.productPrice }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</section>
+
+<hr>
+
+
+<section>
+  <h1 class="heading" *ngIf="searchProduct === ''">Fresh Recommendations</h1>
+  <div class="all-product " *ngIf="searchProduct === ''">
+    <div class="products-item " *ngFor="let product of recommendedProducts">
+      <mat-card class=" recommendation" *ngIf="product.productStatus != 'Sold'">
+        <mat-card-content class="product-info ">
+          <div class="productimage" matRipple>
+            <img
+              class="grow-on-hover "
+              alt="productImage"
+              src="../../assets/images/Products/{{ product.productImgUrl }}"
+              [routerLink]="'/products/' + product.productId"
+              style="height: 17rem; border-radius: 10px"
+            />
+            <div *ngIf="product.productStatus == 'Sold'" class="sold-banner">
+              Sold
+            </div>
+          </div>
+          <mat-card-header class="">
+            <mat-card-title
+              [routerLink]="'/products/' + product.productId"
+            >{{ product.productName | titlecase }}</mat-card-title>
+            <mat-card-subtitle>Rs.{{ product.productPrice }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+
+<section>
+  <div class="products ">
+    <div class="all-product">
+      <div
+        class="products-item"
+        *ngFor="let product of getProductsOnCurrentPage()"
+      >
+        <mat-card
+          class="card-container"
+          *ngIf="
+            searchProduct === '' ||
+            product.productName.toLowerCase().includes(searchProduct.toLowerCase())
+          "
+        >
+          <mat-card-content class="product-info ">
+            <div class="productimage" matRipple>
+              <img
+                class="grow-on-hover "
+                alt="productImage"
+                src="../../assets/images/Products/{{ product.productImgUrl }}"
+                [routerLink]="'/products/' + product.productId"
+                style="height: 17rem; border-radius: 10px"
+              />
+              <div *ngIf="product.productStatus == 'Sold'" class="sold-banner">
+                Sold
+              </div>
+            </div>
+            <mat-card-header>
+              <mat-card-title>{{
+                product.productName | titlecase
+                }}</mat-card-title>
+              <button
+                mat-raised-button
+                color="accent"
+                [routerLink]="'products/' + product.productId"
+                [disabled]="product.productStatus == 'Sold'"
+              >
+                Buy Now
+              </button>
+              <mat-card-subtitle
+              >Rs.{{ product.productPrice }}</mat-card-subtitle
+              >
+            </mat-card-header>
+            <mat-card-footer>
+              <button
+                mat-button
+                [routerLink]="'products/:productId/slot'"
+                [disabled]="product.productStatus == 'Sold'"
+              >
+                <mat-icon> access_time </mat-icon>
+              </button>
+              <button
+                [disabled]="product.productStatus == 'Sold'"
+                mat-raised-button
+                (click)="addToCart(product)"
+                class="mx-3"
+              >
+                <mat-icon> shopping_cart </mat-icon> Add to Cart
+              </button>
+            </mat-card-footer>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <mat-paginator
+    style="margin-right: 3rem"
+    [length]="myProducts.length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+</section>
+
+<app-footer></app-footer>

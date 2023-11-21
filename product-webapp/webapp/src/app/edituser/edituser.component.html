@@ -1,0 +1,164 @@
+
+<form [formGroup]="editForm" (ngSubmit)="editUser()">
+<div class="space-y-12">
+  <div class="border border-gray-300 rounded-lg p-4">
+    <h2 class="text-base font-semibold text-gray-700">Personal Information</h2>
+    <p class="mt-2 text-sm text-gray-500">This information will be displayed publicly, so be careful what you share.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-3 offset-sm-1">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" formControlName="name" autocomplete="given-name" [disabled]="true" value="user">
+
+  </div>
+
+  <div class="col-sm-12 col-md-4 ">
+    <label for="email" class="form-label">Email address</label>
+    <div class="input-group">
+      <input id="email" formControlName="email" type="email" class="form-control" autocomplete="email" value="user@gmail.com" [disabled]="true">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-3 offset-sm-1">
+    <label for="gender" class="form-label">Gender</label>
+    <div class="input-group">
+      <select id="gender" formControlName="gender" class="form-select" autocomplete="gender-name">
+
+        <option>Male</option>
+        <option>Female</option>
+
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-sm-4">
+    <label for="contactNum" class="form-label">Contact Number</label>
+    <div class="input-group">
+      <input
+        type="text"
+        formControlName="contactNum"
+        id="contactNum"
+        class="form-control"
+        autocomplete="contactNum"
+        placeholder="Enter Contact Number"
+      />
+    </div>
+    <div
+      *ngIf="
+      editForm.get('contactNum').hasError('pattern') &&
+      (editForm.get('contactNum').dirty || editForm.get('contactNum').touched)
+    "
+      class="text-danger"
+    >
+      Contact number must be 10 digits.
+    </div>
+  </div>
+
+
+
+</div>
+  <div formGroupName="address">
+
+<div class="row">
+  <div class="col-12 col-sm-4 offset-sm-1">
+    <label for="landmark" class="form-label">Landmark</label>
+    <div class="input-group">
+      <input type="text" formControlName="landmark" id="landmark" class="form-control" autocomplete="landmark" placeholder="Enter Landmark">
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-sm-12 col-md-4 offset-sm-1">
+    <label for="street-name" class="form-label">Street Name</label>
+    <div class="input-group">
+      <input type="text" formControlName="streetName" id="street-name" class="form-control" autocomplete="street-name" placeholder="Enter street name">
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-2">
+    <label for="HouseNum" class="form-label">House Number</label>
+    <div class="input-group">
+      <input type="text" formControlName="additionalField1" id="HouseNum" class="form-control" autocomplete="address-level2" placeholder="Enter House Number">
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-3">
+    <label for="Buildname" class="form-label">Building name</label>
+    <div class="input-group">
+      <input type="text" formControlName="additionalField2" id="Buildname" class="form-control" autocomplete="address-level1" placeholder="Enter Building name">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-md-4 offset-sm-1">
+    <label for="city" class="form-label">City</label>
+    <div class="input-group">
+      <input type="text" formControlName="city" id="city" class="form-control" autocomplete="address-level2" placeholder="Enter city">
+    </div>
+  </div>
+  <div class="col-12 col-md-3">
+    <label for="state" class="form-label">State / Union Territory</label>
+    <div class="input-group">
+      <select id="state" formControlName="state" class="form-select" autocomplete="address-level1">
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+        <option value="Daman and Diu">Daman and Diu</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Puducherry">Puducherry</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-md-2">
+    <label for="postal-code" class="form-label">ZIP / Postal code</label>
+    <div class="input-group">
+      <input type="text" formControlName="pinCode" id="postal-code" class="form-control" autocomplete="postal-code" placeholder="Enter ZIP/postal code">
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="mt-4 d-flex offset-sm-10 gap-2">
+    <button type="button" class="btn btn-secondary">Cancel</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>

@@ -1,0 +1,81 @@
+
+<!--&lt;!&ndash;<p>chat works</p>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash; chat-app.component.html &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<div *ngIf="!username; else chatContent" id="username-page">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="username-page-container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h1 class="title">Type your username</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <form [formGroup]="usernameForm" (ngSubmit)="connect()">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input&ndash;&gt;-->
+<!--&lt;!&ndash;          type="text"&ndash;&gt;-->
+<!--&lt;!&ndash;          id="name"&ndash;&gt;-->
+<!--&lt;!&ndash;          placeholder="Username"&ndash;&gt;-->
+<!--&lt;!&ndash;          autocomplete="off"&ndash;&gt;-->
+<!--&lt;!&ndash;          class="form-control"&ndash;&gt;-->
+<!--&lt;!&ndash;          formControlName="username"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="submit" class="accent username-submit">Start Chatting</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<ng-template #chatContent>&ndash;&gt;-->
+<!--&lt;!&ndash;  <div id="chat-page">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="chat-container">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="chat-header">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h2>Spring WebSocket Chat Demo</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="connecting" *ngIf="connecting">Connecting...</div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ul id="messageArea">&ndash;&gt;-->
+<!--&lt;!&ndash;        <li&ndash;&gt;-->
+<!--&lt;!&ndash;          *ngFor="let message of messages"&ndash;&gt;-->
+<!--&lt;!&ndash;          [ngClass]="{&ndash;&gt;-->
+<!--&lt;!&ndash;            'event-message': message.type === 'JOIN' || message.type === 'LEAVE',&ndash;&gt;-->
+<!--&lt;!&ndash;            'chat-message': message.type === 'CHAT'&ndash;&gt;-->
+<!--&lt;!&ndash;          }"&ndash;&gt;-->
+<!--&lt;!&ndash;        >&ndash;&gt;-->
+<!--&lt;!&ndash;          <i&ndash;&gt;-->
+<!--&lt;!&ndash;            class="avatar"&ndash;&gt;-->
+<!--&lt;!&ndash;            [style.background-color]="getAvatarColor(message.sender)"&ndash;&gt;-->
+<!--&lt;!&ndash;          >&ndash;&gt;-->
+<!--&lt;!&ndash;            {{ message.sender[0] }}&ndash;&gt;-->
+<!--&lt;!&ndash;          </i>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="sender">{{ message.sender }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="message-content">{{ message.content }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;      <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="input-group clearfix">&ndash;&gt;-->
+<!--&lt;!&ndash;            <input&ndash;&gt;-->
+<!--&lt;!&ndash;              type="text"&ndash;&gt;-->
+<!--&lt;!&ndash;              id="message"&ndash;&gt;-->
+<!--&lt;!&ndash;              placeholder="Type a message..."&ndash;&gt;-->
+<!--&lt;!&ndash;              autocomplete="off"&ndash;&gt;-->
+<!--&lt;!&ndash;              class="form-control"&ndash;&gt;-->
+<!--&lt;!&ndash;              formControlName="message"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
+<!--&lt;!&ndash;            <button type="submit" class="primary">Send</button>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </form>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+<!--<div>-->
+<!--  <h2>Chat Room</h2>-->
+<!--  <div class="chat-box">-->
+<!--    <div *ngFor="let msg of messages">-->
+<!--      {{ msg }}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <input [(ngModel)]="message" placeholder="Type your message..." (keyup.enter)="sendMessage()" />-->
+<!--    <button (click)="sendMessage()">Send</button>-->
+<!--  </div>-->
+<!--</div>-->
+

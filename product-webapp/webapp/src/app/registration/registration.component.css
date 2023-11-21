@@ -1,0 +1,277 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');*/
+/*.login,*/
+/*.image {*/
+/*  min-height: 100vh;*/
+/*  background-image: url('../../assets/images/bg-image1.jpg');*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  padding-bottom: 15rem;*/
+
+/*}*/
+/*.center {*/
+/*  display: block;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*  width: 50%;*/
+/*  margin-bottom: 1rem;*/
+/*}*/
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: "poppins",sans-serif;*/
+/*}*/
+/*body{*/
+/*  height: 100vh;*/
+/*  width: 100%;*/
+
+/*}*/
+/*.boxy{*/
+/*  position: relative;*/
+/*  background-image: url('../../assets/images/bg-image1.jpg');*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  max-height: 34rem;*/
+/*  max-width: 40rem;*/
+/*  border-radius: 15px;*/
+/*  margin: 2rem 2rem 2rem 2rem;*/
+/*  backdrop-filter: blur(10px);*/
+/*  padding: 2rem;*/
+
+/*}*/
+
+/*.background{*/
+/*  background: url('../../assets/images/bg-image.jpg') no-repeat center;*/
+/*  background-size:cover ;*/
+/*  height: 100vh;*/
+/*  width: 100%;*/
+/*  filter: blur(5px);*/
+/*  !*background-color: #31d389;*!*/
+/*}*/
+/*.main-container{*/
+/*  position: absolute;*/
+/*  left: 50%;*/
+/*  top: 50%;*/
+/*  transform: translate(-50%,-50%);*/
+/*  width: 80%;*/
+/*  height: 600px;*/
+/*  margin-top: 5px;*/
+/*  background-size: cover;*/
+/*  border-radius: 20px;*/
+/*  overflow: hidden;*/
+/*  !*background-color: #e5c9a9;*!*/
+/*  !*background: url('../../assets/images/bg-image1.jpg') no-repeat center;*!*/
+
+/*}*/
+
+/*.img{*/
+/*  margin-top: 1rem;*/
+/*}*/
+
+/*.card{*/
+/*  position: relative;*/
+/*  margin-right: 6rem;*/
+/*  margin-left: 6rem;*/
+/*  margin-top: 1rem;*/
+/*  background: transparent;*/
+/*  border-radius: 20px;*/
+/*  border: 2px solid rgba(255,255,255,0.5);*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+/*.button-login {*/
+/*  border: white solid 2px;*/
+/*  border-radius: 10px;*/
+/*  margin-left: 2px;*/
+/*  margin-right: 4px;*/
+/*  padding: 2px 5px 3px;*/
+/*  text-align: center;*/
+/*  align-items: center;*/
+/*  color: white;*/
+/*}*/
+
+/*.button-login button{*/
+/*  background-color: #b2e5db;*/
+/*  width: 100%;*/
+/*  border-radius: 20px;*/
+/*}*/
+
+/*.back{*/
+/*  background-image: url('../../assets/images/bg-image1.jpg');*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*}*/
+
+/*.back mat-card{*/
+/*  width: 100%;*/
+/*}*/
+
+/*.boxy svg{*/
+/*  width: 100%;*/
+
+/*}*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap'); /*!*.login {*!*/
+.image {
+  min-height: 100vh;
+  background-image: url('../../assets/images/bg-image1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 2rem;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins",sans-serif;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  background: #000;
+
+}
+.bg-image {
+  background-image: url('../../assets/images/bg-image1.jpg');
+  background-size: cover;
+  background-position: center center;
+  image-resolution: normal;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.content{
+  display: flex;
+  justify-content: center;
+}
+.background{
+  background: url(../../assets/images/pexels-ben-mack-5326990.jpg) no-repeat center;
+  background-size:cover ;
+  height: 100vh;
+  width: 100%;
+  filter: blur(5px);
+}
+
+.main-container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 90%;
+  height: 600px;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.flex-item svg{
+  width: 100%;
+  height: 100%;
+}
+.carded{
+  position: relative;
+  /*margin-left: 8rem;*/
+  /*margin-right: 5rem;*/
+  /*max-width: 30rem;*/
+  width: 27rem;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(25px);
+  padding: 1rem;
+}
+/* Define the default style for flex items */
+.flex-item {
+  flex: 1; /* Make both items grow equally */
+  min-width: 350px; /* Minimum width for each item */
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 80%; /* Set the maximum width of the container */
+  max-height: 100%;
+  background-image: url('../../assets/images/pexels-eberhard-grossgasteiger-1287145.jpg');
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width:1000px) {
+  .flex-item:nth-child(1) {
+    display: none; /* Hide the second div on screens with a maximum width of 768px */
+  }
+  .carded {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 450px;
+    margin-left: 2rem;
+    margin-right: 2rem;/* Adjust the maximum width as needed */
+  }
+
+}
+
+.button{
+  border-radius: 20px;
+}
+
+.btn-cn button{
+  width: 100%;
+}
+
+.custom-control{
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+}
+
+
+.boxy{
+  /*position: relative;*/
+
+  background-image: url('../../assets/images/pexels-eberhard-grossgasteiger-1287145.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 32rem;
+  border-radius: 15px;
+  margin: 2rem 2rem 2rem 2rem;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+}
+
+.button-login {
+  border: white solid 2px;
+  border-radius: 10px;
+  margin-left: 2px;
+  margin-right: 4px;
+  margin-top: 8px;
+  padding: 2px 5px 3px;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.button-login button{
+  background-color: #b2e5db;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.form-group div input{
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.carded mat-card-header{
+  margin-bottom: 1rem;
+
+}

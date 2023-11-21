@@ -1,0 +1,33 @@
+
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(129, 187, 105), rgba(253, 160, 133, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgb(168, 208, 58), rgb(130, 198, 42))
+    }
+
+  .box {
+      position: relative;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #eeeeee;
+    }
+
+    .btn-bottom-edit,
+    .btn-bottom-order {
+      font-size: 20px;
+      background-color: #b2e5db;
+      border-radius: 15px;
+      margin: 15px; /* Add some margin to separate the buttons */
+    }
+
+    .btn-bottom-edit:hover, .btn-bottom-order:hover{
+        background-color: #70c3ac;
+    }
+
+   

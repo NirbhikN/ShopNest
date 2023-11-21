@@ -1,0 +1,176 @@
+
+<div class="whole-navbar-container">
+  <div class="card-container">
+    <mat-card class="example-card">
+      <div class="header flex-box">
+        <div class="logo">
+          <img
+            ngSrc="/assets/images/wNWXJDGJkdIuaXV.png"
+            alt="ShopNest"
+            height="489"
+            width="418"
+            routerLink=""
+          />
+        </div>
+        <div class="search-bar">
+          <span class="pt-2 mx-2">Search:</span>
+          <input
+            [(ngModel)]="enteredSearchValue"
+            (input)="onSearchTextChanged()"
+            type="text"
+            class="search-input"
+            placeholder="Search Product"
+          />
+        </div>
+        <div class="spacer"></div>
+
+        <div class="button-box" routerLink="/addproduct">
+          <button mat-icon-button routerLink="/addproduct">
+            <mat-icon>add_box</mat-icon>
+          </button>
+        </div>
+
+        <div class="button-box">
+          <button mat-icon-button routerLink="/cart">
+            <mat-icon>shopping_cart</mat-icon>
+            <span *ngIf="cartItemCount > 0">
+              <span
+                matBadge="{{ cartItemCount }}"
+                matBadgePosition="before"
+                matBadgeColor="accent"
+              ></span>
+            </span>
+          </button>
+        </div>
+
+        <ng-container *ngIf="!isLoggedIn(); else loggedIn">
+          <button class="user-button me-4" mat-button routerLink="/login">
+            <mat-icon>person</mat-icon>Login
+          </button>
+        </ng-container>
+
+        <ng-template #loggedIn>
+          <!--        <span>Welcome, {{ userName }}! <mat-icon>person_outline</mat-icon>  </span>-->
+          <!-- <button class="user-button2 mx-1" mat-button
+                  routerLink="/view"><mat-icon>person_outline</mat-icon>{{userName}}</button>
+          <button class="user-button2 mx-1" mat-button (click)="signOut()">
+            Sign Out
+            <mat-icon>exit_to_app</mat-icon>
+          </button> -->
+          <div class="btn-group me-4">
+            <div
+              class="btn-group p-2 "
+              ngbDropdown
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <button
+                type="button"
+                class="btn d-flex p-2 dropdown-username"
+                ngbDropdownToggle
+              >
+                <mat-icon>person_outline</mat-icon>{{ userName }}
+              </button>
+              <hr>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <button
+                  class="user-button2 me-2 d-flex"
+                  mat-button
+                  ngbDropdownItem
+                  routerLink="/view"
+                >
+                  <mat-icon>edit</mat-icon>Profile
+                </button>
+                <button
+                  class="user-button2 me-2 my-1 d-flex"
+                  mat-button
+                  ngbDropdownItem
+                  routerLink="/order"
+                >
+                  <mat-icon>list</mat-icon>Orders
+                </button>
+                <button
+                  class="user-button2 me-2 my-1 d-flex"
+                  mat-button
+                  ngbDropdownItem
+                  routerLink="/view/slots"
+                >
+                  <mat-icon>list</mat-icon>Slots
+                </button>
+                <button
+                  class="user-button2 me-2 my-1 d-flex"
+                  mat-button
+                  (click)="signOut()"
+                  ngbDropdownItem
+                >
+                  Log Out
+                  <mat-icon>exit_to_app</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </mat-card>
+  </div>
+  <div class="navbar">
+    <div class="categories-container">
+      <mat-expansion-panel class="categories overlay">
+        <mat-expansion-panel-header>
+          <mat-panel-title> All Categories </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <!-- Add your sub-categories here -->
+          <div class="category-list">
+            <a class="expand-item" [routerLink]="['/categories', 'electronics']"
+              >Electronics</a
+            >
+            <a class="expand-item" [routerLink]="['/categories', 'cars']"
+              >Cars</a
+            >
+            <a class="expand-item" [routerLink]="['/categories', 'motorcycles']"
+              >Motorcycles</a
+            >
+            <a
+              class="expand-item"
+              [routerLink]="['/categories', 'personalLoans']"
+              >Personal Loan</a
+            >
+            <a
+              class="expand-item"
+              [routerLink]="['/categories', 'collectible&arts']"
+              >Collectible and Art</a
+            >
+            <a class="expand-item" [routerLink]="['/categories', 'sports']"
+              >Sports</a
+            >
+            <a class="expand-item" [routerLink]="['/categories', 'home&garden']"
+              >Home & Garden</a
+            >
+          </div>
+        </mat-panel-description>
+      </mat-expansion-panel>
+    </div>
+    <div class="nav-item-container">
+      <mat-card class="nav-items">
+        <a class="nav-item" [routerLink]="['/categories', 'electronics']"
+          >Electronics</a
+        >
+        <a class="nav-item" [routerLink]="['/categories', 'cars']">Cars</a>
+        <a class="nav-item" [routerLink]="['/categories', 'motorcycles']"
+          >Motorcycles</a
+        >
+        <a class="nav-item" [routerLink]="['/categories', 'personalLoans']"
+          >Personal Loan</a
+        >
+        <a class="nav-item" [routerLink]="['/categories', 'collectible&arts']"
+          >Collectible and Art</a
+        >
+        <a class="nav-item" [routerLink]="['/categories', 'sports']">Sports</a>
+        <a class="nav-item" [routerLink]="['/categories', 'home&garden']"
+          >Home & Garden</a
+        >
+      </mat-card>
+    </div>
+  </div>
+</div>

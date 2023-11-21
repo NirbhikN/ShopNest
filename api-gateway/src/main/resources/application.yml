@@ -1,0 +1,89 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8763/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 9004
+
+spring:
+  application:
+    name: "api-gateway"
+  main:
+    web-application-type: reactive
+#    allow-bean-definition-overriding: true
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]': # Apply CORS configuration to all routes
+            allowedOrigins: 'http://localhost:4200' # Replace with the actual origin of your frontend
+            allowedMethods: "GET, POST, PUT, DELETE, *"
+            allowedHeaders: '*'
+            exposedHeaders: '*'
+
+      routes:
+        ## service1
+        - id: Authentication-Service
+          uri: lb://Authentication-Service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+        ## Service2
+        - id: User-Service
+          uri: lb://User-Service
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+        ## service3
+        - id: Slot-Service
+          uri: lb://Slot-Service
+          predicates:
+            - Path=/slots/**
+          filters:
+            - StripPrefix=1
+
+        ## Service4
+        - id: Product-Service
+          uri: lb://Product-Service
+          predicates:
+            - Path=/product/**
+          filters:
+            - StripPrefix=1
+
+        ## service5
+        - id: Payment-Service
+          uri: lb://Payment-Service
+          predicates:
+            - Path=/payments/**
+          filters:
+            - StripPrefix=1
+
+        ## Service6
+        - id: Order-Service
+          uri: lb://Order-Service
+          predicates:
+            - Path=/orders/**
+          filters:
+            - StripPrefix=1
+        ## service7
+        - id: Email-Service
+          uri: lb://Email-Service
+          predicates:
+            - Path=/api/email/**
+          filters:
+            - StripPrefix=1
+
+        ## Service8
+        - id: Chat-Service
+          uri: lb://Chat-Service
+          predicates:
+            - Path=/chats/**
+          filters:
+            - StripPrefix=1

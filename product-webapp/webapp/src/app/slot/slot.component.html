@@ -1,0 +1,106 @@
+<div class="container" *ngIf="productData">
+  <ol class="breadcrumb mt-5">
+    <li class="breadcrumb-item" >
+      <a href="/">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/categories/{{productData.productCategory}}"> {{productData.productCategory}}</a>
+
+    </li> <li class="breadcrumb-item active">
+    {{ productData.productName }}
+  </li>
+  </ol>
+
+  <div class="row mt-3">
+    <div class="col-12 col-md-6">
+      <img src="../../assets/images/Products/{{productData.productImgUrl}}" alt="Product Image" class="product-image rounded-4" style="height: 27rem;  width: 25rem">
+    </div>
+    <div class="col-12 col-md-6">
+      <p class="h3 mt-4 mt-md-0">{{ productData.productName }}</p>
+      <p class="h3"> ₹{{productData.productPrice}}</p>
+      <hr/>
+      <p class="h3">Description</p>
+      <p class="h6 mb-4">{{productData.productDesc}}</p>
+      <hr class="w-75"/>
+      <p class="h6 mt-4">Sold By: &nbsp;<strong>{{productData.sellerName}}</strong> </p>
+      <hr class="w-75"/>
+      <p class="h4">Select a Slot</p>
+
+      <div *ngFor="let slot of slotData">
+      <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color selection">
+        <mat-chip-option
+          [ngStyle]="{ 'max-width.px': 300 }"
+          (selectionChange)="onChipSelectionChange(slot)"
+          [disabled]="slot.booked==true"
+        >
+          {{slot.bookingDate}} : {{slot.startTime}} to {{slot.endTime}}
+        </mat-chip-option>
+      </mat-chip-listbox>
+      </div>
+
+      <button type="button" class="btn btn-primary my-2" (click)="bookSlot()">Book Slot</button>
+
+    </div>
+  </div>
+</div>
+
+<!--<div class="container d-flex justify-content-between p-2 m-2">-->
+
+<!--    <div class="container mt-5">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-6" *ngIf="productData">-->
+<!--                <div class="jumbotron"  >-->
+<!--                    <h1 class="display-4">Seller Details</h1>-->
+<!--                    <hr class="my-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-3">-->
+<!--                            <h2>Name:</h2>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-9">-->
+<!--                            <p class="lead"> <strong> {{productData.sellerName}}</strong></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="col-md-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h2>Address:</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="col-md-9">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p class="lead"><strong> {{productData.sellerId}} </strong></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-3">-->
+<!--                            <h2>Rating:</h2>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-9">-->
+<!--                            <p class="lead"><strong>5⭐</strong></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <div class="col-md-6">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <form [formGroup]="slotForm" (ngSubmit)="bookSlot()">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h1 class="display-4 text-left">Available on</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <hr class="my-4">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <label for="datepicker">Select a Date:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="date" class="form-control mb-3" id="datepicker" formControlName="bookingDate">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <label for="start-time">Select Starting Time</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="time" class="form-control mb-4" id="start-time" formControlName="startTime">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <label for="end-time">Select Ending Time:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="time" class="form-control mb-4" id="end-time" formControlName="endTime">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <button type="submit" class="btn btn-success float-right">Book Slot</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </form>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</div>-->

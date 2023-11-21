@@ -1,0 +1,173 @@
+@media screen and (max-width:1200px) {
+  .card-2 {
+    display: none; /* Hide the second div on screens with a maximum width of 768px */
+  }
+  .mat-card {
+    width: 100%; /* Adjust the width as needed */
+    margin-left: 2rem;/* Adjust the maximum width as needed */
+  }
+  .block-1-button {
+    display: block !important;
+  /* Show the button when screen width is less than 800px */
+  }
+}
+
+  .main-container {
+    display: flex;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    padding: 1rem;
+  }
+
+  .card-1 {
+    flex: 1;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    min-width: 30rem;
+    padding-left: 1rem;
+    padding-right: 4px;
+    border: 2px solid darkgray;
+
+  }
+
+  .card-1-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .back-home {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-1-item-2 {
+    height: 16rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-1-item-2 img {
+    border-radius: 20px;
+    padding-top: 10px;
+    max-height: 18rem;
+    max-width: 17rem;
+  }
+
+  .card-1-item-2-sub-2 h4 {
+    padding-left: 1rem;
+    padding-right: 8px;
+  }
+
+  .card-1-item-2-sub-2 {
+
+  }
+
+  .card-1-item-2-sub-3 {
+    align-self: center;
+  }
+
+  .card-1-item-2-sub-4 {
+    margin-left: 1rem;
+    align-self: center;
+  }
+
+  .card-1-item-2-sub-5 {
+    align-self: center;
+    margin-left: 1rem;
+  }
+
+  .card-2 {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    flex: 2;
+    max-width: 22rem;
+    border: solid darkgray;
+    background-color: lightgrey;
+    height: 42rem;
+  }
+
+  .heading {
+    font-size: 50px;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    font-family: emoji;
+    font-weight: 600;
+  }
+
+  .heading1 {
+    font-size: 40px;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    font-family: emoji;
+    font-weight: 600;
+  }
+
+  .heading-items {
+    font-size: 25px;
+    font-family: emoji;
+    padding-left: 2rem;
+  }
+
+  .content {
+    display: flex;
+
+  }
+
+  .shipping {
+    font-size: 25px;
+    padding-left: 2rem;
+  }
+
+  .shipping h2 {
+    font-family: "Times New Roman", serif;
+  }
+
+  .shipping mat-form-field {
+    width: 90%;
+  }
+
+  .coupon {
+    padding-left: 2rem;
+  }
+
+  .coupon h2 {
+    font-size: 20px;
+    font-family: emoji;
+  }
+
+  .coupon mat-form-field {
+    width: 90%;
+  }
+
+  .price {
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+
+  .price h2 {
+    font-size: 20px;
+    font-family: emoji;
+  }
+
+  .price button {
+    width: 90%;
+    margin-top: 1rem;
+    background-color: black;
+    color: #eeeeee;
+  }
+
+  .each-item {
+    display: flex;
+    justify-content: left;
+  }
+
+  .block-1-button {
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+    background-color: black;
+    color: #eeeeee;
+  }
+

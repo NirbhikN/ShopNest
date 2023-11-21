@@ -1,0 +1,73 @@
+<div class="container" *ngIf="product">
+  <ol class="breadcrumb mt-5">
+    <li class="breadcrumb-item" >
+      <a href="/">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/categories/{{product.productCategory}}"> {{product.productCategory}}</a>
+
+    </li> <li class="breadcrumb-item active">
+    {{ product.productName }}
+  </li>
+  </ol>
+
+  <div class="row mt-3">
+    <div class="col-12 col-md-6 image-size">
+
+      <img src="../../assets/images/Products/{{product.productImgUrl}}" alt="Product Image" class="product-image rounded-4" style="height: 27rem;  width: 25rem">
+      <div *ngIf="product.productStatus == 'Sold'" class="sold-banner">
+        Sold
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6">
+      <p class="h3 mt-4 mt-md-0">{{ product.productName }}</p>
+      <p class="h3"> ₹{{product.productPrice}}</p>
+      <button type="button" class="btn btn-success rounded-5 me-2" *ngIf="userId!=product.sellerId" (click)="buyNow()" [disabled]="product.productStatus == 'Sold'">Buy Now</button>
+      <button class="btn btn-primary rounded-5" *ngIf="userId!=product.sellerId" [disabled]="product.productStatus == 'Sold'">Add to Cart</button>
+      <hr/>
+      <p class="h3">Description</p>
+      <p class="h6 mb-4">{{product.productDesc}}</p>
+      <hr class="w-75"/>
+      <p class="h6 mt-4">Sold By: &nbsp;<strong>{{product.sellerName}}</strong> </p>
+      <p class="h6 mb-4"><i class="bi bi-house-door icon-red"></i>Return within 30 days </p>
+      <hr class="w-75"/>
+
+      <p class="h4">Available Slots</p>
+
+      <div>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Booking Date</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Booking Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngFor="let slot of slotData; let i = index">
+            <tr *ngIf="slot.bookingDate">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ slot.bookingDate }}</td>
+              <td>{{ slot.startTime }}</td>
+              <td>{{ slot.endTime }}</td>
+              <td>{{ slot.booked==true ? "Booked" : "Not Booked" }}</td>
+            </tr>
+
+          <h4 *ngIf="!slot.bookingDate">
+            No slots available.
+          </h4>
+          </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <button type="button" class="btn btn-primary mx-2 rounded-5" *ngIf="userId!=product.sellerId && !isBuyingNow" [disabled]="product.productStatus == 'Sold'" routerLink="/products/{{product.productId}}/slot">Book Slot</button>
+      <button type="button" class="btn btn-danger rounded-5 mb-3 mb-md-0" *ngIf="userId==product.sellerId" routerLink="/products/{{product.productId}}/edit" >Edit Product</button>
+    </div>
+  </div>
+</div>

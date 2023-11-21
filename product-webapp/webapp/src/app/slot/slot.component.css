@@ -1,0 +1,13 @@
+ /*.product-details  li {*/
+ /*    font-size: 18px;*/
+ /*    line-height: 1.6;*/
+ /*}*/
+
+ .product-image {
+   max-width: 100%;
+   height: auto;
+ }
+
+ p{
+   padding: 4px;
+ }

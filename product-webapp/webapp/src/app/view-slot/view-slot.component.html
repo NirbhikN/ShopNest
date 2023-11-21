@@ -1,0 +1,80 @@
+<section>
+<h1 class="heading">Your Slots</h1>
+<div class="containerBox">
+  <mat-tab-group >
+    <mat-tab label="Bought Slots">
+      <div class="bought-items">
+      <div class="headerBox row">
+        <h1 class="col">Bought Slots</h1>
+        <img src="../../assets/images/bought-icon.png" alt="bought-icon" class="col">
+
+        <table class="table table-hover" *ngIf="boughtSlots">
+          <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Seller Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let slot of boughtSlots;  let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{slot.productName | titlecase}}</td>
+            <td>{{slot.productPrice}}</td>
+            <td>{{slot.sellerName | titlecase}}</td>
+            <td>{{slot.bookingDate}}</td>
+            <td>{{slot.startTime}}</td>
+            <td>{{slot.endTime}}</td>
+            <td>{{ slot.booked ? 'Booked' : 'Not Booked' }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </mat-tab>
+
+    <mat-tab label="Second">
+      <div class="sold-items">
+        <div class="headerBox row">
+          <h1 class="col">Sold Slots</h1>
+          <img src="../../assets/images/sold-icon.png" alt="bought-icon" class="col headerImage">
+        </div>
+
+        <table class="table table-hover" *ngIf="soldSlots">
+          <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Seller Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let slot of soldSlots;  let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{slot.productName | titlecase}}</td>
+            <td>{{slot.productPrice}}</td>
+            <td>{{slot.sellerName | titlecase }}</td>
+            <td>{{slot.bookingDate}}</td>
+            <td>{{slot.startTime}}</td>
+            <td>{{slot.endTime}}</td>
+            <td>{{ slot.booked ? 'Booked' : 'Not Booked' }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+</section>
